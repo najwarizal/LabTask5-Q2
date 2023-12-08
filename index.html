@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+   
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      border: 1px solid #ccc;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 60%;
+      max-width: 600px;
+      text-align: center;
+      background-color: #F7E3F5; 
+    }
+
+
+    form {
+      margin-bottom: 20px;
+      text-align: left; 
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .button-group button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #6D2262;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .button-group button:hover {
+      background-color: #F5C1EE;
+    }
+
+  
+    .contact-list {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+    }
+
+    .contact-list i {
+      margin-right: 10px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    
+    form button[type="submit"] {
+      background-color: #6D2262;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button[type="submit"]:hover {
+      background-color: #F5C1EE;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+<div class="container">
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your Name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your Message" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="button-group">
+    <button id="callBtn"><i class="fas fa-phone-alt"></i> Call Us</button>
+    <button id="emailBtn"><i class="far fa-envelope"></i> Send Email</button>
+    <button id="smsBtn"><i class="fas fa-sms"></i> Send SMS</button>
+  </div>
+
+  <ul class="contact-list">
+    <i class="fas fa-map-marker-alt"></i> Politeknik Balik Pulau</li><br><br>
+    <i class="fas fa-envelope"></i> pbu@gmail.com</li><br><br>
+    <i class="fas fa-phone-alt"></i> +1 234 5678</li><br><br>
+  </ul>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#callBtn").click(function() {
+      window.location.href = 'tel:phone_number';
+    });
+
+    $("#emailBtn").click(function() {
+      window.location.href = 'mailto:example@example.com?subject=Subject&body=Body';
+    });
+
+    $("#smsBtn").click(function() {
+      window.location.href = 'https://wa.link/gsl0yp';
+    });
+
+    $("#contactForm").submit(function(e) {
+      e.preventDefault();
+      alert("Form submitted!");
+    });
+  });
+</script>
+</body>
+</html>
